@@ -1,0 +1,701 @@
+{
+  "schemaVersion": "2.0",
+  "items": [
+    {
+      "id": "fbd",
+      "title": "自由體圖 FBD",
+      "category": "engineering",
+      "type": "knowledge",
+      "summary": "隔離研究物體並標示外力，將受力問題轉成平衡方程式。",
+      "tags": [
+        "靜力學",
+        "FBD",
+        "受力分析"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "核心概念",
+          "body": "自由體圖是將研究物體從環境中隔離，只畫作用在該物體上的外力與力矩。它是力學模型，不是外觀圖。"
+        },
+        {
+          "heading": "解題流程",
+          "body": "選定物體、隔離、以反力取代支承、標示重量與外力、設定座標軸，再列平衡式。"
+        },
+        {
+          "heading": "常見錯誤",
+          "body": "不可把作用與反作用力畫在同一物體；接觸力方向依接觸條件判斷；斜力分解前先確認角度基準。"
+        }
+      ]
+    },
+    {
+      "id": "equilibrium",
+      "title": "平面剛體平衡",
+      "category": "engineering",
+      "type": "knowledge",
+      "summary": "掌握 ΣFx、ΣFy 與 ΣM 三個獨立平衡條件。",
+      "tags": [
+        "靜力學",
+        "平衡",
+        "力矩"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "平衡條件",
+          "body": "平面剛體靜力平衡需滿足 ΣFx=0、ΣFy=0、ΣM=0，分別代表兩軸合力與合力矩為零。"
+        },
+        {
+          "heading": "力矩",
+          "body": "M_O=F d_perp，或 M_O=xF_y−yF_x。力臂是參考點到力作用線的垂直距離。"
+        },
+        {
+          "heading": "取矩策略",
+          "body": "若未知反力作用線通過某點，選該點取矩可消去反力。統一正負號並檢查 N·m 單位。"
+        }
+      ]
+    },
+    {
+      "id": "trusses",
+      "title": "桁架：節點法與剖面法",
+      "category": "engineering",
+      "type": "knowledge",
+      "summary": "依題目需求選擇節點法或剖面法求桿件拉壓內力。",
+      "tags": [
+        "桁架",
+        "節點法",
+        "剖面法"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "理想模型",
+          "body": "理想桁架由鉸接節點連接直桿，外力作用於節點，桿件可視為二力構件。"
+        },
+        {
+          "heading": "節點法",
+          "body": "對單一節點畫 FBD，使用 ΣFx=0、ΣFy=0；一次通常最多解兩個未知桿力。"
+        },
+        {
+          "heading": "剖面法",
+          "body": "假想切開桁架，對切開部分取平衡，適合快速求少數指定桿件。"
+        }
+      ]
+    },
+    {
+      "id": "friction",
+      "title": "乾摩擦：靜摩擦與動摩擦",
+      "category": "engineering",
+      "type": "knowledge",
+      "summary": "分辨靜摩擦上限與滑動摩擦，避免一律使用 μN。",
+      "tags": [
+        "摩擦",
+        "接觸",
+        "靜力學"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "摩擦方向",
+          "body": "摩擦力沿接觸面，抵抗相對滑動或滑動趨勢，方向需由可能的相對運動判斷。"
+        },
+        {
+          "heading": "靜摩擦",
+          "body": "靜摩擦會隨需求調整，最大值 f_s,max=μ_sN。未達臨界時不可直接令 f_s=μ_sN。"
+        },
+        {
+          "heading": "動摩擦",
+          "body": "滑動時常用 f_k=μ_kN。先假設靜止求所需摩擦，再檢查是否超過上限。"
+        }
+      ]
+    },
+    {
+      "id": "crystal",
+      "title": "晶體結構：SC、BCC、FCC、HCP",
+      "category": "materials",
+      "type": "knowledge",
+      "summary": "比較常見晶體結構的原子數、配位數與堆積因子。",
+      "tags": [
+        "材料科學",
+        "晶體",
+        "APF"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "單位晶胞原子數",
+          "body": "SC 總數 1；BCC 角點加體心，總數 2；FCC 角點加六個面心，總數 4。"
+        },
+        {
+          "heading": "配位與 APF",
+          "body": "理想模型下 SC 配位數 6、APF 約 0.52；BCC 為 8、約 0.68；FCC 與 HCP 為 12、約 0.74。"
+        },
+        {
+          "heading": "幾何關係",
+          "body": "SC 沿立方邊接觸；BCC 沿體對角線；FCC 沿面對角線，晶格常數需依接觸方向建立關係。"
+        }
+      ]
+    },
+    {
+      "id": "bragg",
+      "title": "布拉格定律與 X 光繞射",
+      "category": "materials",
+      "type": "knowledge",
+      "summary": "用晶面間距與繞射角理解 XRD 峰位。",
+      "tags": [
+        "XRD",
+        "Bragg",
+        "晶面"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "基本原理",
+          "body": "晶體週期晶面散射 X 光，當光程差為整數倍波長時產生建設性干涉。"
+        },
+        {
+          "heading": "布拉格定律",
+          "body": "2d sinθ=nλ。d 為晶面間距、θ 為光線與晶面的角度、λ 為波長；儀器常顯示 2θ。"
+        },
+        {
+          "heading": "讀圖提醒",
+          "body": "不要混淆 θ 與 2θ；確認波長、角度單位與階數。"
+        }
+      ]
+    },
+    {
+      "id": "miller",
+      "title": "米勒指數：晶面表示法",
+      "category": "materials",
+      "type": "knowledge",
+      "summary": "由晶面截距取倒數並化成最小整數比。",
+      "tags": [
+        "Miller Indices",
+        "晶面",
+        "材料"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "計算流程",
+          "body": "找晶面與各軸截距，以晶格常數正規化，取倒數，再化為最小整數比，以 (hkl) 表示。"
+        },
+        {
+          "heading": "特殊情況",
+          "body": "晶面平行某軸時截距為無限大，倒數為 0；負截距以指數上方橫線表示。"
+        },
+        {
+          "heading": "符號區別",
+          "body": "(hkl) 表示晶面，[uvw] 表示方向，{hkl} 表示晶面族。"
+        }
+      ]
+    },
+    {
+      "id": "vacancy",
+      "title": "空位缺陷與空位濃度",
+      "category": "materials",
+      "type": "knowledge",
+      "summary": "理解空位形成與溫度關係，使用公式估算平衡空位數。",
+      "tags": [
+        "點缺陷",
+        "Vacancy",
+        "材料"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "點缺陷",
+          "body": "空位是晶格位置缺少原子的點缺陷，其他例子包含間隙原子、置換原子與自間隙原子。"
+        },
+        {
+          "heading": "常用公式",
+          "body": "N_v=N exp(−Q_v/kT)。N 為原子位置總數，Q_v 為空位形成能，k 為波茲曼常數，T 為絕對溫度。"
+        },
+        {
+          "heading": "單位檢查",
+          "body": "溫度用 K；若 Q_v 是每莫耳能量，需使用 R；確認能量與常數單位相容。"
+        }
+      ]
+    },
+    {
+      "id": "llm",
+      "title": "大型語言模型 LLM",
+      "category": "ai",
+      "type": "knowledge",
+      "summary": "理解 LLM 的文字生成方式、常見用途與可靠性限制。",
+      "tags": [
+        "LLM",
+        "生成式AI",
+        "模型"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "基本概念",
+          "body": "大型語言模型從大量資料學習文字序列模式，依據上下文預測後續 token。不同模型訓練與部署方式不同。"
+        },
+        {
+          "heading": "常見用途",
+          "body": "摘要、分類、翻譯、程式輔助、問答與腦力激盪，品質受提示、上下文、模型與工具影響。"
+        },
+        {
+          "heading": "限制",
+          "body": "模型可能產生合理但錯誤的內容。涉及最新資訊、數據或高風險決策時應查證原始來源。"
+        }
+      ]
+    },
+    {
+      "id": "tokens",
+      "title": "Token 與 Context Window",
+      "category": "ai",
+      "type": "knowledge",
+      "summary": "了解 Token 計量與上下文容量對長文件處理的影響。",
+      "tags": [
+        "Token",
+        "Context",
+        "LLM"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "Token",
+          "body": "Token 是模型處理文字的基本單位，可能是字、詞的一部分或標點；Token 數不等於字數。"
+        },
+        {
+          "heading": "上下文視窗",
+          "body": "Context Window 是模型一次可處理的上下文容量，可能包含提示、歷史對話與輸出。"
+        },
+        {
+          "heading": "長資料策略",
+          "body": "先建立目錄與摘要，再分段輸入；保留定義、限制、來源與未解問題。"
+        }
+      ]
+    },
+    {
+      "id": "prompt",
+      "title": "Prompt Engineering 提示詞設計",
+      "category": "ai",
+      "type": "knowledge",
+      "summary": "以角色、任務、背景、限制與輸出格式建立可重複提示。",
+      "tags": [
+        "Prompt",
+        "LLM",
+        "提示詞"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "提示結構",
+          "body": "可包含角色、任務、背景、輸入資料、限制、輸出格式與驗收條件。重點是明確，不是越長越好。"
+        },
+        {
+          "heading": "具體化",
+          "body": "指定受眾、用途、版面限制、必須保留的元素與成功條件，比「做得更好」更容易得到可用結果。"
+        },
+        {
+          "heading": "迭代",
+          "body": "判斷問題來自背景不足、規則模糊、格式不清楚或缺少驗收條件，再針對原因修正。"
+        }
+      ]
+    },
+    {
+      "id": "rag",
+      "title": "RAG 檢索增強生成",
+      "category": "ai",
+      "type": "knowledge",
+      "summary": "理解文件索引、檢索與生成流程及資料品質風險。",
+      "tags": [
+        "RAG",
+        "檢索",
+        "知識庫"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "流程",
+          "body": "文件切分、建立索引或向量、檢索相關片段，再將片段提供給模型生成回答。"
+        },
+        {
+          "heading": "價值與限制",
+          "body": "可讓回答參考特定知識庫，但不保證正確；檢索錯誤或文件過期仍會導致錯誤答案。"
+        },
+        {
+          "heading": "評估",
+          "body": "檢查是否找到正確資料、回答是否忠於來源、引用是否可追溯，以及資料不足時能否承認不知道。"
+        }
+      ]
+    },
+    {
+      "id": "agent",
+      "title": "AI Agent 基本架構",
+      "category": "agents",
+      "type": "knowledge",
+      "summary": "以目標、狀態、工具與回饋理解 Agent 任務循環。",
+      "tags": [
+        "AI Agent",
+        "Architecture",
+        "LLM"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "定義",
+          "body": "AI Agent 可依目標選擇步驟、使用工具並依結果調整行動；自主程度可大可小。"
+        },
+        {
+          "heading": "基本循環",
+          "body": "接收目標 → 觀察上下文 → 規劃 → 執行工具或模型 → 檢查結果 → 更新狀態。"
+        },
+        {
+          "heading": "設計原則",
+          "body": "先從可控單步流程開始。每個行動都應有目的、權限邊界與可檢查結果。"
+        }
+      ]
+    },
+    {
+      "id": "tool-use",
+      "title": "Tool Use 工具使用",
+      "category": "agents",
+      "type": "knowledge",
+      "summary": "設計工具輸入輸出、權限與錯誤處理，避免模型任意操作。",
+      "tags": [
+        "Tool Use",
+        "Function Calling",
+        "Agent"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "工具角色",
+          "body": "工具提供搜尋、計算、讀檔或受控服務能力；模型判斷何時使用，工具負責執行。"
+        },
+        {
+          "heading": "工具規格",
+          "body": "定義名稱、用途、參數型別、必填欄位、輸出結構、錯誤狀態與權限。"
+        },
+        {
+          "heading": "安全設計",
+          "body": "刪除、付款、寄送或公開發布等高影響操作應要求使用者確認，不可把憑證放在提示或前端。"
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "title": "Planning 任務規劃",
+      "category": "agents",
+      "type": "knowledge",
+      "summary": "將大任務拆成有輸入、輸出與完成條件的小步驟。",
+      "tags": [
+        "Planning",
+        "Task Decomposition",
+        "Agent"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "任務分解",
+          "body": "將高層目標拆成子任務，明確定義每一步的輸入、預期輸出與完成條件。"
+        },
+        {
+          "heading": "依賴關係",
+          "body": "標示哪些步驟必須先完成，哪些可以平行，避免前置條件未完成就執行後續工作。"
+        },
+        {
+          "heading": "動態修正",
+          "body": "當工具結果與預期不同時更新計畫，說明變更原因，而不是盲目照原計畫執行。"
+        }
+      ]
+    },
+    {
+      "id": "reflection",
+      "title": "Reflection 自我檢查",
+      "category": "agents",
+      "type": "knowledge",
+      "summary": "依明確標準檢查輸出並修正，避免無限反思迴圈。",
+      "tags": [
+        "Reflection",
+        "Self-Critique",
+        "Agent"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "基本流程",
+          "body": "先產生初稿，再依正確性、完整性與格式等標準檢查，最後根據發現修正。"
+        },
+        {
+          "heading": "限制",
+          "body": "模型自我評估也可能錯誤；若沒有外部證據或測試，反思可能只是重述偏誤。"
+        },
+        {
+          "heading": "停止條件",
+          "body": "設定最大修正次數與停止條件。多次仍無法通過時，回報阻礙並交由人類處理。"
+        }
+      ]
+    },
+    {
+      "id": "echo",
+      "title": "Echo 回音：AI 情緒覺察與人際連結",
+      "category": "projects",
+      "type": "project",
+      "summary": "記錄以 AI 協助情緒整理、並促進真實人際互動的產品概念。",
+      "tags": [
+        "Echo",
+        "AI Product",
+        "Prototype"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "專案理念",
+          "body": "Echo 希望讓 AI 成為理解情緒的橋樑，而不是人際互動的終點，重視情緒覺察、表達與連結。"
+        },
+        {
+          "heading": "原型狀態",
+          "body": "既有展示原型以互動網頁呈現流程，部分分析回應為模擬內容；不可描述成已完成正式 AI 後端串接。"
+        },
+        {
+          "heading": "下一步",
+          "body": "定義端到端流程，測試輸入、輸出格式與錯誤情境。涉及心理健康內容需標示限制，不提供診斷。"
+        }
+      ]
+    },
+    {
+      "id": "frc",
+      "title": "FRC 機器人競賽紀錄",
+      "category": "projects",
+      "type": "project",
+      "summary": "以機構、電控、程式、製造與團隊協作整理競賽經驗。",
+      "tags": [
+        "FRC",
+        "Robotics",
+        "Engineering"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "工程整合",
+          "body": "競賽機器人需整合機構、電控、程式、製造與溝通，兼顧任務需求、可靠度與時程。"
+        },
+        {
+          "heading": "開發流程",
+          "body": "需求拆解 → 概念設計 → 原型製作 → 子系統測試 → 整合測試 → 迭代。"
+        },
+        {
+          "heading": "待補資料",
+          "body": "年份、隊伍、負責模組、設計圖、測試紀錄與獎項需由本人確認，不可由 AI 推測。"
+        }
+      ]
+    },
+    {
+      "id": "puf-iot",
+      "title": "PUF × IoT 裝置身分驗證",
+      "category": "projects",
+      "type": "project",
+      "summary": "整理硬體特徵辨識概念、系統流程與待驗證問題。",
+      "tags": [
+        "PUF",
+        "IoT",
+        "Security"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "研究問題",
+          "body": "IoT 裝置需要可靠身分識別。只依賴可複製的軟體識別碼，可能無法充分證明硬體本身。"
+        },
+        {
+          "heading": "PUF 概念",
+          "body": "Physical Unclonable Function 利用製造過程中的物理差異，對輸入挑戰產生裝置特徵回應。"
+        },
+        {
+          "heading": "待驗證",
+          "body": "需測試可靠度、唯一性、重現性、環境穩定性、誤接受率與誤拒絕率；未測試前不宣稱特定安全等級。"
+        }
+      ]
+    },
+    {
+      "id": "3d-print",
+      "title": "3D 列印零件強度測試",
+      "category": "projects",
+      "type": "project",
+      "summary": "以材料、列印參數、方向與測試結果建立可重複比較的實驗紀錄。",
+      "tags": [
+        "3D Printing",
+        "材料測試",
+        "Experiment"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "實驗變因",
+          "body": "力學表現可能受材料、列印方向、填充率、層高、壁數與製程條件影響。"
+        },
+        {
+          "heading": "紀錄欄位",
+          "body": "記錄材料批次、設備、層高、填充率、方向、試片尺寸、測試設備、載重方式與失效模式。"
+        },
+        {
+          "heading": "結果呈現",
+          "body": "以實際量測的應力—應變曲線、最大載重與破壞照片呈現。數據必須來自實驗，不可由 AI 生成。"
+        }
+      ]
+    },
+    {
+      "id": "study",
+      "title": "工程學習法：從公式到模型",
+      "category": "learning",
+      "type": "log",
+      "summary": "用物理意義、適用條件、單位與例題建立可遷移理解。",
+      "tags": [
+        "Learning",
+        "Engineering",
+        "Study"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "物理意義",
+          "body": "每個公式都要能回答：描述什麼現象？符號代表什麼？方向與正負號如何定義？"
+        },
+        {
+          "heading": "適用條件",
+          "body": "公式建立在剛體、線彈性、小變形或等加速度等假設上，先確認題目符合假設。"
+        },
+        {
+          "heading": "解題流程",
+          "body": "畫圖與定義系統 → 列已知未知 → 選定律 → 建方程式 → 求解 → 檢查單位與方向。"
+        }
+      ]
+    },
+    {
+      "id": "notes",
+      "title": "容錯筆記法：標記不確定",
+      "category": "learning",
+      "type": "log",
+      "summary": "用明確標記保存疑問，讓複習優先處理真正不理解的地方。",
+      "tags": [
+        "Note Taking",
+        "Reflection",
+        "Study"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "筆記目的",
+          "body": "筆記不是抄完整教材，而是留下能幫助回想、解題與發現知識缺口的結構。"
+        },
+        {
+          "heading": "不確定標記",
+          "body": "可用星號標記未完全理解的定義或步驟，旁邊寫出具體問題，而不是只寫「不懂」。"
+        },
+        {
+          "heading": "複習流程",
+          "body": "先嘗試自行解釋，再查教材或例題，最後把疑問改寫成自己能回答的一句話。"
+        }
+      ]
+    },
+    {
+      "id": "research",
+      "title": "技術文獻閱讀",
+      "category": "learning",
+      "type": "log",
+      "summary": "用研究問題、方法、結果與限制快速掌握技術文章。",
+      "tags": [
+        "Research",
+        "Reading",
+        "Critical Thinking"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "閱讀順序",
+          "body": "先看標題、摘要、圖表與結論，確認研究問題，再讀方法與實驗細節。"
+        },
+        {
+          "heading": "四個問題",
+          "body": "作者解決什麼問題？提出什麼方法？如何驗證？結果支持什麼結論，又有哪些限制？"
+        },
+        {
+          "heading": "引用紀錄",
+          "body": "記錄作者、機構、標題、年份、DOI 或網址與查閱日期，區分作者主張與自己的推測。"
+        }
+      ]
+    },
+    {
+      "id": "portfolio",
+      "title": "技術作品集整理",
+      "category": "learning",
+      "type": "log",
+      "summary": "呈現專案背景、個人貢獻、技術決策與可驗證成果。",
+      "tags": [
+        "Portfolio",
+        "Career",
+        "Documentation"
+      ],
+      "date": "2026-11-15",
+      "readTime": "約 4 分鐘",
+      "sourceNote": "基礎教學整理；專案中未經確認的成果與數據均保留待補。",
+      "content": [
+        {
+          "heading": "作品頁結構",
+          "body": "背景與問題、目標、角色與貢獻、系統架構、技術選擇、實作、測試、限制與下一步。"
+        },
+        {
+          "heading": "證據優先",
+          "body": "用公開程式碼、設計圖、照片或測試資料支持敘述，團隊成果與個人貢獻需分開。"
+        },
+        {
+          "heading": "誠實標示",
+          "body": "概念、原型、測試中與正式完成是不同成熟度，必須明確標示。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "categories": [
+    {
+      "id": "engineering",
+      "label": "工程",
+      "english": "ENGINEERING",
+      "description": "靜力學、力學與工程基礎。"
+    },
+    {
+      "id": "materials",
+      "label": "材料",
+      "english": "MATERIALS",
+      "description": "晶體結構、缺陷與材料性質。"
+    },
+    {
+      "id": "ai",
+      "label": "AI 技術",
+      "english": "AI TECHNOLOGY",
+      "description": "LLM、Prompt、RAG 與 Embedding。"
+    },
+    {
+      "id": "agents",
+      "label": "AI Agent",
+      "english": "AI AGENTS",
+      "description": "Agent 架構、規劃、反思與工具使用。"
+    },
+    {
+      "id": "projects",
+      "label": "專案",
+      "english": "PROJECTS",
+      "description": "工程、機器人與 AI 專案紀錄。"
+    },
+    {
+      "id": "learning",
+      "label": "學習",
+      "english": "LEARNING LOG",
+      "description": "學習方法、研究閱讀與作品集。"
+    }
+  ]
+}
